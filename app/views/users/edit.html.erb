@@ -1,0 +1,13 @@
+<h1 class="block mt-3 text-3xl font-extrabold tracking-tight text-slate-900">Edit user</h1> 
+
+<% if @user.errors.any? %>
+  <div class="errors">
+    <h2><%= pluralize(@post.errors.count, "error")%> prevented user from being saved</h2>
+<ul>
+  <% @post.errors.full_messages.each do |msg| %>
+    <li>%<%= msg %></li>
+  <% end %>
+</ul>
+  </div>
+<% end %>
+<%= render "form" %>
